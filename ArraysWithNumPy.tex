@@ -1,0 +1,155 @@
+Numpy's array class is called ndarray. It is also known by the alias array. Note that numpy.array is not the same as the Standard Python Library class array.array, which only handles one-dimensional arrays and offers less functionality. The more important attributes of an ndarray object are:
+\textbf{ndarray.ndim}
+the number of axes (dimensions) of the array. In the Python world, the number of dimensions is referred to as rank.
+\textbf{ndarray.shape}
+the dimensions of the array. This is a tuple of integers indicating the size of the array in each dimension. For a matrix with n rows and m columns, shape will be (n,m). The length of the shape tuple is therefore the rank, or number of dimensions, ndim.
+\textbf{ndarray.size}
+the total number of elements of the array. This is equal to the product of the elements of shape.
+\textbf{ndarray.dtype}
+an object describing the type of the elements in the array. One can create or specify dtype's using standard Python types. Additionally NumPy provides types of its own. numpy.int32, numpy.int16, and numpy.float64 are some examples.
+\textbf{ndarray.itemsize}
+the size in bytes of each element of the array. For example, an array of elements of type float64 has itemsize 8 (=64/8), while one of type complex32 has itemsize 4 (=32/8). It is equivalent to ndarray.dtype.itemsize.
+ndarray.data
+the buffer containing the actual elements of the array. Normally, we won't need to use this attribute because we will access the elements in an array using indexing facilities.
+An example
+\begin{verbatim}
+>>> from numpy  import *
+>>> a = arange(15).reshape(3, 5)
+>>> a
+array([[ 0,  1,  2,  3,  4],
+       [ 5,  6,  7,  8,  9],
+       [10, 11, 12, 13, 14]])
+>>> a.shape
+(3, 5)
+>>> a.ndim
+2
+>>> a.dtype.name
+'int32'
+>>> a.itemsize
+4
+>>> a.size
+15
+>>> type(a)
+numpy.ndarray
+>>> b = array([6, 7, 8])
+>>> b
+array([6, 7, 8])
+>>> type(b)
+numpy.ndarray
+\end{verbatim}
+%-----------------------------------------------------------------------------------%
+\subsection{Array Creation}
+There are several ways to create arrays.
+For example, you can create an array from a regular Python list or tuple using the array function. The type of the resulting array is deduced from the type of the elements in the sequences.
+\begin{verbatim}
+>>> from numpy  import *
+>>> a = array( [2,3,4] )
+>>> a
+array([2, 3, 4])
+>>> a.dtype
+dtype('int32')
+>>> b = array([1.2, 3.5, 5.1])
+>>> b.dtype
+dtype('float64')
+\end{verbatim}
+%-------------------------------------------------------------------------------------%
+A frequent error consists in calling array with multiple numeric arguments, rather than providing a single list of numbers as an argument.
+>>> a = array(1,2,3,4)    # WRONG
+
+>>> a = array([1,2,3,4])  # RIGHT
+array transforms sequences of sequences into two-dimensional arrays, sequences of sequences of sequences into three-dimensional arrays, and so on.
+\begin{verbatim}
+>>> b = array( [ (1.5,2,3), (4,5,6) ] )
+>>> b
+array([[ 1.5,  2. ,  3. ],
+       [ 4. ,  5. ,  6. ]])
+\end{verbatim}
+The type of the array can also be explicitly specified at creation time:
+\begin{verbatim}
+>>> c = array( [ [1,2], [3,4] ], dtype=complex )
+>>> c
+array([[ 1.+0.j,  2.+0.j],
+       [ 3.+0.j,  4.+0.j]])
+\end{verbatim}
+Often, the elements of an array are originally unknown, but its size is known. Hence, NumPy offers several functions to create arrays with initial placeholder content. These minimize the necessity of growing arrays, an expensive operation.
+The function zeros creates an array full of zeros, the function ones creates an array full of ones, and the function empty creates an array whose initial content is random and depends on the state of the memory. By default, the dtype of the created array is float64.
+\begin{verbatim}
+>>> zeros( (3,4) )
+array([[0.,  0.,  0.,  0.],
+       [0.,  0.,  0.,  0.],
+       [0.,  0.,  0.,  0.]])
+>>> ones( (2,3,4), dtype=int16 )                # dtype can also be specified
+array([[[ 1, 1, 1, 1],
+        [ 1, 1, 1, 1],
+        [ 1, 1, 1, 1]],
+       [[ 1, 1, 1, 1],
+        [ 1, 1, 1, 1],
+        [ 1, 1, 1, 1]]], dtype=int16)
+>>> empty( (2,3) )
+array([[  3.73603959e-262,   6.02658058e-154,   6.55490914e-260],
+       [  5.30498948e-313,   3.14673309e-307,   1.00000000e+000]])
+\end{verbatim}
+To create sequences of numbers, NumPy provides a function analogous to range that returns arrays instead of lists
+>>> arange( 10, 30, 5 )
+array([10, 15, 20, 25])
+>>> arange( 0, 2, 0.3 )                 # it accepts float arguments
+array([ 0. ,  0.3,  0.6,  0.9,  1.2,  1.5,  1.8])
+When arange is used with floating point arguments, it is generally not possible to predict the number of elements obtained, due to the finite floating point precision. For this reason, it is usually better to use the function linspace that receives as an argument the number of elements that we want, instead of the step:
+\begin{verbatim}
+>>> linspace( 0, 2, 9 )                 # 9 numbers from 0 to 2
+array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ,  1.25,  1.5 ,  1.75,  2.  ])
+>>> x = linspace( 0, 2*pi, 100 )        # useful to evaluate function at lots of points
+>>> f = sin(x)
+\end{verbatim}
+\textit{See also
+array, zeros, zeros_like, ones, ones_like, empty, empty_like, arange, linspace, rand, randn, fromfunction, fromfile}
+\newpage
+\section{Printing Arrays}
+When you print an array, NumPy displays it in a similar way to nested lists, but with the following layout:
+the last axis is printed from left to right,
+the second-to-last is printed from top to bottom,
+the rest are also printed from top to bottom, with each slice separated from the next by an empty line.
+One-dimensional arrays are then printed as rows, bidimensionals as matrices and tridimensionals as lists of matrices.
+\begin{verbatim}
+>>> a = arange(6)                         # 1d array
+>>> print a
+[0 1 2 3 4 5]
+>>>
+>>> b = arange(12).reshape(4,3)           # 2d array
+>>> print b
+[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]]
+>>>
+>>> c = arange(24).reshape(2,3,4)         # 3d array
+>>> print c
+[[[ 0  1  2  3]
+  [ 4  5  6  7]
+  [ 8  9 10 11]]
+
+ [[12 13 14 15]
+  [16 17 18 19]
+  [20 21 22 23]]]
+\end{verbatim}
+%-----------------------------------------------------------------------------%
+See below to get more details on reshape.
+If an array is too large to be printed, NumPy automatically skips the central part of the array and only prints the corners:
+\begin{verbatim}
+>>> print arange(10000)
+[   0    1    2 ..., 9997 9998 9999]
+>>>
+>>> print arange(10000).reshape(100,100)
+[[   0    1    2 ...,   97   98   99]
+ [ 100  101  102 ...,  197  198  199]
+ [ 200  201  202 ...,  297  298  299]
+ ...,
+ [9700 9701 9702 ..., 9797 9798 9799]
+ [9800 9801 9802 ..., 9897 9898 9899]
+ [9900 9901 9902 ..., 9997 9998 9999]]
+\end{verbatim}
+%-----------------------------------------------------------------------------%
+To disable this behaviour and force NumPy to print the entire array, you can change the printing options using set_printoptions.
+\begin{verbatim}
+>>> set_printoptions(threshold='nan')
+\end{verbatim}
