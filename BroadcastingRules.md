@@ -1,11 +1,13 @@
 Broadcasting rules
+==================
 Broadcasting allows universal functions to deal in a meaningful way with inputs that do not have exactly the same shape.
 The first rule of broadcasting is that if all input arrays do not have the same number of dimensions, a "1" will be repeatedly prepended to the shapes of the smaller arrays until all the arrays have the same number of dimensions.
 The second rule of broadcasting ensures that arrays with a size of 1 along a particular dimension act as if they had the size of the array with the largest shape along that dimension. The value of the array element is assumed to be the same along that dimension for the "broadcast" array.
 After application of the broadcasting rules, the sizes of all arrays must match. More details can be found in this documentation.
-Fancy indexing and index tricks
+### Fancy indexing and index tricks
 NumPy offers more indexing facilities than regular Python sequences. In addition to indexing by integers and slices, as we saw before, arrays can be indexed by arrays of integers and arrays of booleans.
-Indexing with Arrays of Indices
+### Indexing with Arrays of Indices
+<pre><code>
 >>> a = arange(12)**2                          # the first 12 square numbers
 >>> i = array( [ 1,1,3,8,5 ] )                 # an array of indices
 >>> a[i]                                       # the elements of a at the positions i
@@ -15,7 +17,9 @@ array([ 1,  1,  9, 64, 25])
 >>> a[j]                                       # the same shape as j
 array([[ 9, 16],
        [81, 49]])
+</code></pre>
 When the indexed array a is multidimensional, a single array of indices refers to the first dimension of a. The following example shows this behavior by converting an image of labels into a color image using a palette.
+<pre><code>
 >>> palette = array( [ [0,0,0],                # black
 ...                    [255,0,0],              # red
 ...                    [0,255,0],              # green
@@ -32,6 +36,7 @@ array([[[  0,   0,   0],
         [  0,   0, 255],
         [255, 255, 255],
         [  0,   0,   0]]])
+</code></pre>
 We can also give indexes for more than one dimension. The arrays of indices for each dimension must have the same shape.
 >>> a = arange(12).reshape(3,4)
 >>> a
@@ -59,10 +64,12 @@ array([[[ 2,  1],
        [[10,  9],
         [11, 11]]])
 Naturally, we can put i and j in a sequence (say a list) and then do the indexing with the list.
+<pre><code>
 >>> l = [i,j]
 >>> a[l]                                       # equivalent to a[i,j]
 array([[ 2,  5],
        [ 7, 11]])
+</code></pre>       
 However, we can not do this by putting i and j into an array, because this array will be interpreted as indexing the first dimension of a.
 >>> s = array( [i,j] )
 >>> a[s]                                       # not what we want
@@ -74,6 +81,7 @@ IndexError: index (3) out of range (0<=index<=2) in dimension 0
 array([[ 2,  5],
        [ 7, 11]])
 Another common use of indexing with arrays is the search of the maximum value of time-dependent series :
+<pre><code> 
 >>> time = linspace(20, 145, 5)                 # time scale
 >>> data = sin(arange(20)).reshape(5,4)         # 4 time-dependent series
 >>> time
@@ -100,6 +108,7 @@ array([ 0.98935825,  0.84147098,  0.99060736,  0.6569866 ])
 >>>
 >>> all(data_max == data.max(axis=0))
 True
+</code></pre>
 You can also use indexing with arrays as a target to assign to:
 >>> a = arange(5)
 >>> a
