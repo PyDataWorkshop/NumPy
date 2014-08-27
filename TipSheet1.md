@@ -1,5 +1,6 @@
 Constructing arrays
 
+<pre><code>
 scipy.array(alist): construct an n-dimensional array from a Python list (all elements of list must be of same length)
 a = scipy.array([[1,2,3],[4,5,6]])
 b = scipy.array([i*i for i in range(100) if i%2==1])
@@ -18,16 +19,23 @@ scipy.transpose(a)
 b = scipy.transpose(a)                    # reverse dimensions of a (even for dim > 2)
 b = a.T                                   # equivalent to scipy.transpose(a)
 c = scipy.swapaxes(a, axis1, axis2)       # swap specified axes
+</code></pre>
 scipy.arange and scipy.linspace
+<pre><code>
 a = scipy.arange(start, stop, increment)      # like Python range, but with (potentially) real-valued arrays
 b = scipy.linspace(start, stop, num_elements) # create array of equally-spaced points based on specifed number of points
+</code></pre>
 Random array constructors in scipy.random
+<pre><code>
 a = scipy.random.random((100,100))        # 100x100 array of floats uniform on [0.,1.)
 b = scipy.random.randint(0,10, (100,))    # 100 random ints uniform on [0, 10), i.e., not including the upper bound 10
 c = scipy.random.standard_normal((5,5,5)) # zero-mean, unit-variance Gaussian random numbers in a 5x5x5 array
-Indexing arrays
+</code></pre>
+
+### Indexing arrays
 
 Multidimensional indexing
+<pre><code>
 elem = a[i,j,k]       # equiv. to a[i][j][k] but presumably more efficient
 "Negative" indexing (wrap around the end of the array)
 last_elem = a[-1]     # the last element of the array
@@ -37,3 +45,4 @@ j = scipy.array([1,2,3,4])                     # array of indices for the second
 a[i,j]                                         # return array([a[0,1], a[1,2], a[2,3], a[1,4]])
 b = scipy.array([True, False, True, False])
 a[b]                                           # return array([a[0], a[2]]) since only b[0] and b[2] are True
+</code></pre>
