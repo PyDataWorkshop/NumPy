@@ -1,5 +1,9 @@
 #### Indexing: Comparing Matrices and 2D Arrays
-Note that there are some important differences between NumPy arrays and matrices. NumPy provides two fundamental objects: an N-dimensional array object and a universal function object. Other objects are built on top of these. In particular, matrices are 2-dimensional array objects that inherit from the NumPy array object. For both arrays and matrices, indices must consist of a proper combination of one or more of the following: integer scalars, ellipses, a list of integers or boolean values, a tuple of integers or boolean values, and a 1-dimensional array of integer or boolean values. A matrix can be used as an index for matrices, but commonly an array, list, or other form is needed to accomplish a given task.
+Note that there are some important differences between NumPy arrays and matrices. 
+ - NumPy provides two fundamental objects: an N-dimensional array object and a universal function object. 
+ - Other objects are built on top of these. In particular, matrices are 2-dimensional array objects that inherit from the NumPy array object. 
+ - For both arrays and matrices, indices must consist of a proper combination of one or more of the following: integer scalars, ellipses, a list of integers or boolean values, a tuple of integers or boolean values, and a 1-dimensional array of integer or boolean values. 
+ - A matrix can be used as an index for matrices, but commonly an array, list, or other form is needed to accomplish a given task.
 <hr>
 As usual in Python, indexing is zero-based. Traditionally we represent a 2D array or matrix as a rectangular array of rows and columns, where movement along axis 0 is movement across rows, while movement along axis 1 is movement across columns.
 Let's make an array and matrix to slice:
@@ -12,10 +16,12 @@ array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])
 >>> M = mat(A.copy())
 >>> print type(A),"  ",type(M)
 <type 'numpy.ndarray'>    <class 'numpy.core.defmatrix.matrix'>
+>>>
 >>> print A
 [[ 0  1  2  3]
  [ 4  5  6  7]
  [ 8  9 10 11]]
+>>>
 >>> print M
 [[ 0  1  2  3]
  [ 4  5  6  7]
@@ -95,31 +101,40 @@ array([[ 2,  3],
        [10, 11]])
 </code></pre>
 Indexing the matrix is not so convenient.
+<pre><code>
 >>> M[0,:]>1
 matrix([[False, False, True, True]], dtype=bool)
 >>> M[:,M[0,:]>1]
 matrix([[2, 3]])
+</code></pre>
 The problem of course is that slicing the matrix slice produced a matrix. But matrices have a convenient 'A' attribute whose value is the array representation, so we can just do this instead:
 >>> M[:,M.A[0,:]>1]
 matrix([[ 2,  3],
         [ 6,  7],
         [10, 11]])
+</code></pre>
 If we wanted to conditionally slice the matrix in two directions, we must adjust our strategy slightly. Instead of
 >>> A[A[:,0]>2,A[0,:]>1]
 array([ 6, 11])
 >>> M[M.A[:,0]>2,M.A[0,:]>1]
 matrix([[ 6, 11]])
-we need to use the cross product 'ix_':
+</code></pre>
+we need to use the cross product `ix_`
+<pre><code>
 >>> A[numpy.ix_(A[:,0]>2,A[0,:]>1)]
 array([[ 6,  7],
        [10, 11]])
 >>> M[numpy.ix_(M.A[:,0]>2,M.A[0,:]>1)]
 matrix([[ 6,  7],
         [10, 11]])
-Tricks and Tips
+</code></pre>
+#### Tricks and Tips
 Here we give a list of short and useful tips.
+
+<hr?>
 #### "Automatic" Reshaping
 To change the dimensions of an array, you can omit one of the sizes which will then be deduced automatically:
+<pre></code>
 >>> a = arange(30)
 >>> a.shape = 2,-1,3  # -1 means "whatever is needed"
 >>> a.shape
@@ -135,3 +150,4 @@ array([[[ 0,  1,  2],
         [21, 22, 23],
         [24, 25, 26],
         [27, 28, 29]]])
+</code></pre>
