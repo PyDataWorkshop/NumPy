@@ -1,6 +1,6 @@
 The `ix_()` function
 ==========================
-The `ix_` function can be used to combine different vectors so as to obtain the result for each n-uplet. For example, if you want to compute all the a+b*c for all the triplets taken from each of the vectors a, b and c:
+The `ix_` function can be used to combine different vectors so as to obtain the result for each n-uplet. For example, if you want to compute all the `a+b*c` for all the triplets taken from each of the vectors a, b and c:
 
 <pre><code>
 >>> a = array([2,3,4,5])
