@@ -24,19 +24,24 @@ array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])
 
 <hr>
 Now, let's take some simple slices. Basic slicing uses slice objects or integers. For example, the evaluation of A[:] and M[:] will appear familiar from Python indexing, however it is important to note that slicing NumPy arrays does *not* make a copy of the data; slicing provides a new view of the same data.
+
 <pre><code>
 >>> print A[:]; print A[:].shape
 [[ 0  1  2  3]
  [ 4  5  6  7]
  [ 8  9 10 11]]
 (3, 4)
+>>>
 >>> print M[:]; print M[:].shape
 [[ 0  1  2  3]
  [ 4  5  6  7]
  [ 8  9 10 11]]
 (3, 4)
 </code></pre>
+
 Now for something that differs from Python indexing: you may use comma-separated indices to index along multiple axes at the same time.
+
+<pre><code>
 >>> print A[:,1]; print A[:,1].shape
 [1 5 9]
 (3,)
@@ -45,17 +50,25 @@ Now for something that differs from Python indexing: you may use comma-separated
  [5]
  [9]]
 (3, 1)
-Notice the difference in the last two results. Use of a single colon for the 2D array produces a 1-dimensional array, while for a matrix it produces a 2-dimensional matrix. A slice of a matrix will always produce a matrix. For example, a slice M[2,:] produces a matrix of shape (1,4). In contrast, a slice of an array will always produce an array of the lowest possible dimension. For example, if C were a 3-dimensional array, C[...,1] produces a 2D array while C[1,:,1] produces a 1-dimensional array. From this point on, we will show results only for the array slice if the results for the corresponding matrix slice are identical.
+</code></pre>
+
+Notice the difference in the last two results. Use of a single colon for the 2D array produces a 1-dimensional array, while for a matrix it produces a 2-dimensional matrix. 
+A slice of a matrix will always produce a matrix. For example, a slice M[2,:] produces a matrix of shape (1,4). In contrast, a slice of an array will always produce an array of the lowest possible dimension. For example, if C were a 3-dimensional array, C[...,1] produces a 2D array while C[1,:,1] produces a 1-dimensional array. From this point on, we will show results only for the array slice if the results for the corresponding matrix slice are identical.
+
 Lets say that we wanted the 1st and 3rd column of an array. One way is to slice using a list:
+<pre><code>
 >>> A[:,[1,3]]
 array([[ 1,  3],
        [ 5,  7],
        [ 9, 11]])
+</code></pre>
 A slightly more complicated way is to use the take() method:
+<pre><code>
 >>> A[:,].take([1,3],axis=1)
 array([[ 1,  3],
        [ 5,  7],
        [ 9, 11]])
+<code><pre>       
 If we wanted to skip the first row, we could use:
 >>> A[1:,].take([1,3],axis=1)
 array([[ 5,  7],
