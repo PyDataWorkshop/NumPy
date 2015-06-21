@@ -1,0 +1,31 @@
+
+Gamblers Ruin Problem
+
+Really we should be using a while loop for this problem. But for now let us just assume that it is almost impossible
+for the gambler to last more than 5000 rounds, if his initial wealth is less than 50 and the probability of success is less than 50%
+
+p = 0.47
+
+Rounds = np.sign(p-np.random.random(5000) ) 
+
+
+This will generate a sequences of -1s or 1s (with 53% and 47% probability respectively)
+An outcome of -1 means the gambler has lost a round ( and looses 1 euro). Conversely an outcome of 1 means the gambler has 1 euro.
+
+To get an idea of the Gambler's Progress, we can use the `cumsum` function.
+
+np.cumsum(Rounds)
+
+This assumes an initial starting wealth of 0. If our gambler starts with 50 euro, for example. We could determine his ongoing bank balance as follows
+
+A = 50.
+
+GamblersWealth = np.cumsum(np.array(A, Rounds) )
+
+GamblersWealth[0]  #  Gamblers initial Wealth
+GamblersWealth[10] #  Gamblers Wealth after round 10.
+
+Necessarily the gambling ends when the Gambler runs out of money. 
+(For the time being, We will assume  that the Banker is infinitely rich, and can never go broke. Later on we will change that assumption, allowing for a scenario 
+where the gambler can potentially bankrupt the banker)
+ 
