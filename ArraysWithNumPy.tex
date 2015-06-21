@@ -1,16 +1,19 @@
-Arrays in NumPy
+\section{Arrays in NumPy}
 % - http://www.python-course.eu/numpy.php
 Arrays constitute the central component of the module NumPy. 
 The main difference to standard Python lists consists in the fact that the elements of a NumPy array have to be of the same type, usually float or int. NumPy arrays are by far more efficient the lists of Python. Principially, an array can be seen like a list with the following differences:
 All elements have to be of the same type, i.e. integer, float (real) or complex numbers
 The number of elements have to be known a priori, i.e. when the array is created. It can't be changed afterwards.
 Of course, arrays of NumPy are not limited to one dimension. They are of arbitrary dimension. 
+
+%================================================================%
 A NumPy Array can be generated from a list or a tuple with the array-method, as shown in the following example: 
 $ import numpy as np
 $ x = np.array([42,47,11], int)
 $ x
 $ array([42, 47, 11])
 
+%================================================================%
 The array method transforms sequences of sequences into two dimensional arrays.
 >>> x = np.array( ((11,12,13), (21,22,23), (31,32,33)) )
 >>> print x
@@ -18,6 +21,8 @@ The array method transforms sequences of sequences into two dimensional arrays.
  [21 22 23]
  [31 32 33]]
 >>> 
+
+%================================================================%
 Correspondingly, it converts sequences of sequences of sequences into three dimensional arrays:
 >>> x = np.array( ( ((111,112), (121,122) ), ((211,212),(221,222)) ) )
 >>> print x
@@ -32,10 +37,12 @@ Correspondingly, it converts sequences of sequences of sequences into three dime
 222
 >>> 
 
-The attribute ndim tells us the number of dimensions of an array:
+%================================================================%
+The attribute \texttt{ndim} tells us the number of dimensions of an array:
 >>> x = np.array( ((11,12,13), (21,22,23) ))
 >>> x.ndim
 2
+%================================================================%
 The method shape() gives us the dimensions:
 >>> x = np.array( ((7,3,0), (7,11,9), (15,3,7),(12,4,8)  ))
 >>> x.ndim
@@ -97,6 +104,8 @@ array([ 1.4142,  0.67  ,  7.    ])
 >>>
 
 We can use slices with 2-dimensional arrays as well:
+\begin{framed}
+\begin{verbatim}
 >>> x[:,0]
 array([ 0.314 ,  1.4142])
 >>> x[:,1]
@@ -104,10 +113,17 @@ array([ 0.5 ,  0.67])
 >>> x[:,2]
 array([ 17.,   7.])
 >>> 
+\end{verbatim}
+\end{framed}
+%================================================================%
 
-The attribut dtype contains the type of an array:
+The attribute \texttt{dtype} contains the type of an array:
+\begin{framed}
+\begin{verbatim}
 >>> x.dtype
 dtype('float64')
+\end{verbatim}
+\end{framed}
 float64 is a numerical data type of NumPy, which stores numbers in double precision, similar to float in Python.
 
 %================================================================%
@@ -116,6 +132,8 @@ Reshaping Arrays
 There are two methods to flatten a multidimensional array:
 flatten()
 ravel()
+\begin{framed}
+\begin{verbatim}
 >>> x = np.array([[[ 0,  1],
 ...         [ 2,  3],
 ...         [ 4,  5],
@@ -155,6 +173,8 @@ The order of the elements in the array returned by ravel() is normally "C-style"
 
 %================================================================%
 The method reshape() gives a new shape to an array without changing its data, i.e. it returns a new array with a new shape.
+\begin{framed}
+\begin{verbatim}
 >>> x = np.array(range(24))
 >>> y = x.reshape((3,4,2))
 >>> y
