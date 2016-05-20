@@ -20,12 +20,15 @@ pseudorandom numbers.
 \end{itemize}
 
 \subsection{Random Seeds}
-The seed is an integer value. Any program that starts with the same seed will generate exactly 
-the same sequence of random numbers each time it is run. This can be useful for debugging 
+\begin{itemize}
+\item The seed is an integer value. Any program that starts with the same seed will generate exactly 
+the same sequence of random numbers each time it is run. 
+\item This can be useful for debugging 
 purposes, but one does not need to specify the seed and in fact, when we perform multiple 
 runs of the same simulation to be averaged together, we want each such trial to have a 
-different sequence of random numbers. If this command is not run, NumPy automatically 
+different sequence of random numbers. 
+\item If this command is not run, NumPy automatically 
 selects a random seed (based on the time) that is different every time a program is run. 
-
+\end{itemize}
 
 \end{document}
