@@ -1,0 +1,23 @@
+Creating character arrays (numpy.char)
+Note
+numpy.char is the preferred alias for numpy.core.defchararray.
+
+core.defchararray.array(obj[, itemsize, ...])	Create a chararray.
+core.defchararray.asarray(obj[, itemsize, ...])	Convert the input to a chararray, copying the data only if necessary.
+Numerical ranges
+arange([start,] stop[, step,][, dtype])	Return evenly spaced values within a given interval.
+linspace(start, stop[, num, endpoint, ...])	Return evenly spaced numbers over a specified interval.
+logspace(start, stop[, num, endpoint, base, ...])	Return numbers spaced evenly on a log scale.
+meshgrid(*xi, **kwargs)	Return coordinate matrices from coordinate vectors.
+mgrid	nd_grid instance which returns a dense multi-dimensional “meshgrid”.
+ogrid	nd_grid instance which returns an open multi-dimensional “meshgrid”.
+Building matrices
+diag(v[, k])	Extract a diagonal or construct a diagonal array.
+diagflat(v[, k])	Create a two-dimensional array with the flattened input as a diagonal.
+tri(N[, M, k, dtype])	An array with ones at and below the given diagonal and zeros elsewhere.
+tril(m[, k])	Lower triangle of an array.
+triu(m[, k])	Upper triangle of an array.
+vander(x[, N, increasing])	Generate a Vandermonde matrix.
+The Matrix class
+mat(data[, dtype])	Interpret the input as a matrix.
+bmat(obj[, ldict, gdict])	Build a matrix object from a string, nested sequence, or array.
