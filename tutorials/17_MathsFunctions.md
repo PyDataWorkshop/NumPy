@@ -1,7 +1,6 @@
 
 NumPy - Mathematical Functions
 
-Advertisements
 
 
 
