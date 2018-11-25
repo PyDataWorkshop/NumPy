@@ -6,7 +6,8 @@ NumPy has quite a few useful statistical functions for finding minimum, maximum,
 numpy.amin() and numpy.amax()
 These functions return the minimum and the maximum from the elements in the given array along the specified axis.
 Example
- Live Demo
+
+<pre><code>
 import numpy as np 
 a = np.array([[3,7,5],[8,4,3],[2,4,9]]) 
 
@@ -46,6 +47,7 @@ Applying amax() function:
 Applying amax() function again:
 [8 7 9]
 numpy.ptp()
+</code></pre>
 The numpy.ptp() function returns the range (maximum-minimum) of values along an axis.
  Live Demo
 import numpy as np 
@@ -79,7 +81,8 @@ Applying ptp() function along axis 1:
 
 Applying ptp() function along axis 0:
 [6 3 6]
-numpy.percentile()
+
+#### numpy.percentile()
 Percentile (or a centile) is a measure used in statistics indicating the value below which a given percentage of observations in a group of observations fall. The function numpy.percentile() takes the following arguments.
 numpy.percentile(a, q, axis)
 Where,
@@ -129,8 +132,9 @@ Applying percentile() function along axis 0:
 [ 50. 40. 60.]
 numpy.median()
 Median is defined as the value separating the higher half of a data sample from the lower half. The numpy.median() function is used as shown in the following program.
-Example
- Live Demo
+
+#### Example
+<pre><code>
 import numpy as np 
 a = np.array([[30,65,70],[80,95,10],[50,90,60]]) 
 
@@ -148,6 +152,8 @@ print '\n'
  
 print 'Applying median() function along axis 1:' 
 print np.median(a, axis = 1)
+</code></pre>
+
 It will produce the following output −
 Our array is:
 [[30 65 70]
@@ -162,10 +168,12 @@ Applying median() function along axis 0:
 
 Applying median() function along axis 1:
 [ 65. 80. 60.]
-numpy.mean()
+
+#### numpy.mean()
 Arithmetic mean is the sum of elements along an axis divided by the number of elements. The numpy.mean() function returns the arithmetic mean of elements in the array. If the axis is mentioned, it is calculated along it.
-Example
- Live Demo
+
+#### Example
+<pre><coe>
 import numpy as np 
 a = np.array([[1,2,3],[3,4,5],[4,5,6]]) 
 
@@ -183,6 +191,7 @@ print '\n'
 
 print 'Applying mean() function along axis 1:' 
 print np.mean(a, axis = 1)
+</code></pre>
 It will produce the following output −
 Our array is:
 [[1 2 3]
@@ -197,13 +206,13 @@ Applying mean() function along axis 0:
 
 Applying mean() function along axis 1:
 [ 2. 4. 5.]
-numpy.average()
+
+#### numpy.average()
 Weighted average is an average resulting from the multiplication of each component by a factor reflecting its importance. The numpy.average() function computes the weighted average of elements in an array according to their respective weight given in another array. The function can have an axis parameter. If the axis is not specified, the array is flattened.
 Considering an array [1,2,3,4] and corresponding weights [4,3,2,1], the weighted average is calculated by adding the product of the corresponding elements and dividing the sum by the sum of weights.
 Weighted average = (1*4+2*3+3*2+4*1)/(4+3+2+1)
 Example
- Live Demo
-import numpy as np 
+<pre><code>import numpy as np 
 a = np.array([1,2,3,4]) 
 
 print 'Our array is:' 
@@ -224,6 +233,7 @@ print '\n'
 # Returns the sum of weights, if the returned parameter is set to True. 
 print 'Sum of weights' 
 print np.average([1,2,3, 4],weights = [4,3,2,1], returned = True)
+</code></pre>
 It will produce the following output −
 Our array is:
 [1 2 3 4]
