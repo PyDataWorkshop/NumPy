@@ -1,7 +1,5 @@
-
  
- 
-NumPy - Arithmetic Operations
+### NumPy - Arithmetic Operations
 
 
 Input arrays for performing arithmetic operations such as add(), subtract(), multiply(), and divide() must be either of the same shape or should conform to array broadcasting rules.
@@ -62,7 +60,8 @@ Divide the two arrays:
  [ 0.3 0.4 0.5]
  [ 0.6 0.7 0.8]]
 Let us now discuss some of the other important arithmetic functions available in NumPy.
-numpy.reciprocal()
+
+#### numpy.reciprocal()
 This function returns the reciprocal of argument, element-wise. For elements with absolute values larger than 1, the result is always 0 because of the way in which Python handles integer division. For integer 0, an overflow warning is issued.
 Example
  Live Demo
@@ -98,7 +97,8 @@ The second array is:
 
 After applying reciprocal function:
 [0]
-numpy.power()
+
+#### numpy.power()
 This function treats elements in the first input array as base and returns it raised to the power of the corresponding element in the second input array.
  Live Demo
 import numpy as np 
@@ -131,7 +131,8 @@ Second array:
 
 Applying power function again:
 [        10      10000 1000000000]
-numpy.mod()
+
+#### numpy.mod()
 This function returns the remainder of division of the corresponding elements in the input array. The function numpy.remainder() also produces the same result.
  Live Demo
 import numpy as np 
@@ -164,11 +165,12 @@ Applying mod() function:
 
 Applying remainder() function:                                                
 [1 0 2]
+
 The following functions are used to perform operations on array with complex numbers.
-numpy.real() − returns the real part of the complex data type argument.
-numpy.imag() − returns the imaginary part of the complex data type argument.
-numpy.conj() − returns the complex conjugate, which is obtained by changing the sign of the imaginary part.
-numpy.angle() − returns the angle of the complex argument. The function has degree parameter. If true, the angle in the degree is returned, otherwise the angle is in radians.
+* numpy.real() − returns the real part of the complex data type argument.
+* numpy.imag() − returns the imaginary part of the complex data type argument.
+* numpy.conj() − returns the complex conjugate, which is obtained by changing the sign of the imaginary part.
+* numpy.angle() − returns the angle of the complex argument. The function has degree parameter. If true, the angle in the degree is returned, otherwise the angle is in radians.
  Live Demo
 import numpy as np 
 a = np.array([-5.6j, 0.2j, 11. , 1+1j]) 
