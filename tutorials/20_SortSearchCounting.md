@@ -1,4 +1,6 @@
 
+
+```python
 NumPy - Sort, Search & Counting Functions
 
 
@@ -24,6 +26,12 @@ yes
 O(n*log(n))
 0
 no
+```
+
+
+```python
+
+
 numpy.sort()
 The sort() function returns a sorted copy of the input array. It has the following parameters −
 numpy.sort(a, axis, kind, order)
@@ -42,6 +50,11 @@ Default is quicksort
 4
 order
 If the array contains fields, the order of fields to be sorted
+```
+
+
+```python
+
 Example
  Live Demo
 import numpy as np  
@@ -58,6 +71,11 @@ print '\n'
 print 'Sort along axis 0:' 
 print np.sort(a, axis = 0) 
 print '\n'  
+```
+
+
+```python
+
 
 # Order parameter in sort function 
 dt = np.dtype([('name', 'S10'),('age', int)]) 
@@ -69,6 +87,10 @@ print '\n'
 
 print 'Order by name:' 
 print np.sort(a, order = 'name')
+```
+
+
+```python
 It will produce the following output −
 Our array is:
 [[3 7]
@@ -110,6 +132,12 @@ print '\n'
 print 'Reconstruct the original array using loop:' 
 for i in y: 
    print x[i],
+```
+
+
+```python
+
+
 It will produce the following output −
 Our array is:
 [3 1 2]
@@ -300,3 +328,5 @@ Extract elements using condition
 [ 0. 2. 4. 6. 8.]
 
 
+
+```

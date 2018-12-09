@@ -1,4 +1,7 @@
 
+
+```python
+
 NumPy - Mathematical Functions
 
 
@@ -7,8 +10,7 @@ NumPy - Mathematical Functions
 Quite understandably, NumPy contains a large number of various mathematical operations. NumPy provides standard trigonometric functions, functions for arithmetic operations, handling complex numbers, etc.
 Trigonometric Functions
 NumPy has standard trigonometric functions which return trigonometric ratios for a given angle in radians.
-
-#### Example
+Example
  Live Demo
 import numpy as np 
 a = np.array([0,30,45,60,90]) 
@@ -37,8 +39,12 @@ Tangent values for given angles:
    1.63312394e+16]
 arcsin, arcos, and arctan functions return the trigonometric inverse of sin, cos, and tan of the given angle. The result of these functions can be verified by numpy.degrees() function by converting radians to degrees.
 
-#### Example
-<pre><code>
+```
+
+
+```python
+Example
+ Live Demo
 import numpy as np 
 a = np.array([0,30,45,60,90]) 
 
@@ -82,7 +88,10 @@ print '\n'
 
 print 'In degrees:' 
 print np.degrees(inv) 
-</code></pre>
+```
+
+
+```python
 
 Its output is as follows −
 Array containing sine values:
@@ -113,6 +122,11 @@ Inverse of tan:
 
 In degrees:
 [  0.  30.  45.  60.  90.]
+```
+
+
+```python
+
 Functions for Rounding
 numpy.around()
 This is a function that returns the value rounded to the desired precision. The function takes the following parameters.
@@ -120,13 +134,14 @@ numpy.around(a,decimals)
 Where,
 Sr.No.
 Parameter & Description
-1: a
+1
+a
 Input data
-2: decimals
+2
+decimals
 The number of decimals to round to. Default is 0. If negative, the integer is rounded to position to the left of the decimal point
-
-#### Example
-<pre><code>
+Example
+ Live Demo
 import numpy as np 
 a = np.array([1.0,5.55, 123, 0.567, 25.532]) 
 
@@ -138,8 +153,6 @@ print 'After rounding:'
 print np.around(a) 
 print np.around(a, decimals = 1) 
 print np.around(a, decimals = -1)
-</code></pre>
-
 It produces the following output −
 Original array:                                                               
 [   1.       5.55   123.       0.567   25.532] 
@@ -148,11 +161,17 @@ After rounding:
 [   1.    6.   123.    1.   26. ]                                               
 [   1.    5.6  123.    0.6  25.5]                                          
 [   0.    10.  120.    0.   30. ]
+
+
+
+```
+
+
+```python
 numpy.floor()
 This function returns the largest integer not greater than the input parameter. The floor of the scalar x is the largest integer i, such that i <= x. Note that in Python, flooring always is rounded away from 0.
-
-##### Example
-<pre><code>
+Example
+ Live Demo
 import numpy as np 
 a = np.array([-1.7, 1.5, -0.2, 0.6, 10]) 
 
@@ -162,21 +181,16 @@ print '\n'
 
 print 'The modified array:' 
 print np.floor(a)
-</code></pre>
-
 It produces the following output −
 The given array:                                                              
 [ -1.7   1.5  -0.2   0.6  10. ]
 
 The modified array:                                                           
 [ -2.   1.  -1.   0.  10.]
-
-## numpy.ceil()
-The ceil() function returns the ceiling of an input value, i.e. the ceil of the scalar x is the 
-smallest integer i, such that i >= x.
-
-#### Example
-<pre><code>
+numpy.ceil()
+The ceil() function returns the ceiling of an input value, i.e. the ceil of the scalar x is the smallest integer i, such that i >= x.
+Example
+ Live Demo
 import numpy as np 
 a = np.array([-1.7, 1.5, -0.2, 0.6, 10]) 
 
@@ -186,8 +200,6 @@ print '\n'
 
 print 'The modified array:' 
 print np.ceil(a)
-</code></pre>
-
 It will produce the following output −
 The given array:                                                              
 [ -1.7   1.5  -0.2   0.6  10. ]
@@ -195,4 +207,4 @@ The given array:
 The modified array:                                                           
 [ -1.   2.  -0.   1.  10.]
 
-
+```
