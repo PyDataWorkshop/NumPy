@@ -108,25 +108,18 @@ print(np.ptp(a, axis = 0) )
     [6 3 6]
 
 
-
-```python
-
-numpy.percentile()
+### numpy.percentile()
 Percentile (or a centile) is a measure used in statistics indicating the value below which a given percentage of observations in a group of observations fall. The function numpy.percentile() takes the following arguments.
+<pre><code>
 numpy.percentile(a, q, axis)
+</code></pre>
 Where,
 Sr.No.
-Argument & Description
-1
-a
-Input array
-2
-q
-The percentile to compute must be between 0-100
-3
-axis
-The axis along which the percentile is to be calculated
-```
+Argument &amp; Description
+
+1 a Input array
+2 q The percentile to compute must be between 0-100
+3 axis The axis along which the percentile is to be calculated
 
 #### Example
 
@@ -182,9 +175,10 @@ print(np.percentile(a,50, axis = 0))
 
 
 ```python
-numpy.median()
+### ``numpy.median()``
+
 Median is defined as the value separating the higher half of a data sample from the lower half. 
-The numpy.median() function is used as shown in the following program.
+The ``numpy.median()`` function is used as shown in the following program.
 
 #### Example
 ```
@@ -192,9 +186,6 @@ The numpy.median() function is used as shown in the following program.
 
 ```python
 
-
-
- 
 import numpy as np 
 a = np.array([[30,65,70],[80,95,10],[50,90,60]]) 
 
@@ -235,11 +226,16 @@ print(np.median(a, axis = 1))
 
 
 ```python
-
 numpy.mean()
 Arithmetic mean is the sum of elements along an axis divided by the number of elements. The numpy.mean() function returns the arithmetic mean of elements in the array. If the axis is mentioned, it is calculated along it.
 Example
  
+```
+
+
+```python
+
+
 import numpy as np 
 a = np.array([[1,2,3],[3,4,5],[4,5,6]]) 
 
@@ -252,11 +248,11 @@ print(np.mean(a)
 print('\n')  
 
 print('Applying mean() function along axis 0:') 
-print(np.mean(a, axis = 0) 
+print(np.mean(a, axis = 0) )
 print('\n')  
 
 print('Applying mean() function along axis 1:') 
-print(np.mean(a, axis = 1)
+print(np.mean(a, axis = 1))
 ```
 
 
@@ -286,6 +282,11 @@ Weighted average is an average resulting from the multiplication of each compone
 Considering an array [1,2,3,4] and corresponding weights [4,3,2,1], the weighted average is calculated by adding the product of the corresponding elements and dividing the sum by the sum of weights.
 Weighted average = (1*4+2*3+3*2+4*1)/(4+3+2+1)
 Example
+```
+
+
+```python
+
  
 import numpy as np 
 a = np.array([1,2,3,4]) 
@@ -298,6 +299,12 @@ print('Applying average() function:')
 print(np.average(a) 
 print('\n')  
 
+
+```
+
+
+```python
+
 # this is same as mean when weight is not specified 
 wts = np.array([4,3,2,1]) 
 
@@ -308,24 +315,6 @@ print('\n')
 # Returns the sum of weights, if the returned parameter is set to True. 
 print('Sum of weights' 
 print(np.average([1,2,3, 4],weights = [4,3,2,1], returned = True)
-
-```
-
-
-```python
-
-It will produce the following output −
-Our array is:
-[1 2 3 4]
-
-Applying average() function:
-2.5
-
-Applying average() function again:
-2.0
-
-Sum of weights
-(2.0, 10.0)
 
 ```
 
@@ -366,15 +355,12 @@ print(np.average(a, axis = 1, weights = wt, returned = True))
     (array([0.625, 2.625, 4.625]), array([8., 8., 8.]))
 
 
-
-```python
 Standard Deviation
 Standard deviation is the square root of the average of squared deviations from mean. The formula for standard deviation is as follows −
 std = sqrt(mean(abs(x - x.mean())**2))
 If the array is [1, 2, 3, 4], then its mean is 2.5. Hence the squared deviations are [2.25, 0.25, 0.25, 2.25] and the square root of its mean divided by 4, i.e., sqrt (5/4) is 1.1180339887498949.
 Example
  
-```
 
 
 ```python

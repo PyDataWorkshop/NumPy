@@ -133,61 +133,30 @@ print('\n')
 ```python
 print('Tan function:') 
 tan = np.tan(a*np.pi/180) 
-print tan
+print(tan)
 print('\n')  
 
 print('Inverse of tan:') 
 inv = np.arctan(tan) 
-print inv 
+print( inv) 
 print('\n')  
 
 print('In degrees:') 
-print( np.degrees(inv) 
+print( np.degrees(inv) )
 ```
 
+    Tan function:
+    [0.00000000e+00 5.77350269e-01 1.00000000e+00 1.73205081e+00
+     1.63312394e+16]
+    
+    
+    Inverse of tan:
+    [0.         0.52359878 0.78539816 1.04719755 1.57079633]
+    
+    
+    In degrees:
+    [ 0. 30. 45. 60. 90.]
 
-```python
-Its output is as follows −
-Array containing sine values:
-[ 0.          0.5         0.70710678  0.8660254   1.        ]
-
-Compute sine inverse of angles. Returned values are in radians.
-[ 0.          0.52359878  0.78539816  1.04719755  1.57079633] 
-
-Check result by converting to degrees:
-[  0.  30.  45.  60.  90.]
-
-arccos and arctan functions behave similarly:
-[  1.00000000e+00   8.66025404e-01   7.07106781e-01   5.00000000e-01          
-   6.12323400e-17] 
-```
-
-
-```python
-Inverse of cos:
-[ 0.          0.52359878  0.78539816  1.04719755  1.57079633] 
-
-In degrees:
-[  0.  30.  45.  60.  90.] 
-
-Tan function:
-[  0.00000000e+00   5.77350269e-01   1.00000000e+00   1.73205081e+00          
-   1.63312394e+16]
-
-```
-
-
-```python
-
-
-
-
-Inverse of tan:
-[ 0.          0.52359878  0.78539816  1.04719755  1.57079633]
-
-In degrees:
-[  0.  30.  45.  60.  90.]
-```
 
 
 ```python
@@ -196,6 +165,14 @@ numpy.around()
 This is a function that returns the value rounded to the desired precision. The function takes the following parameters.
 numpy.around(a,decimals)
 ```
+
+
+      File "<ipython-input-9-5902e39dbbf8>", line 1
+        Functions for Rounding
+                    ^
+    SyntaxError: invalid syntax
+
+
 
 
 ```python
@@ -213,10 +190,26 @@ decimals
 ```
 
 
+      File "<ipython-input-10-1a2e6198c607>", line 4
+        Sr.No.
+              ^
+    SyntaxError: invalid syntax
+
+
+
+
 ```python
 The number of decimals to round to. Default is 0. If negative, the integer is rounded to position to the left of the decimal point
 Example
 ```
+
+
+      File "<ipython-input-11-4d5cfad55669>", line 1
+        The number of decimals to round to. Default is 0. If negative, the integer is rounded to position to the left of the decimal point
+                 ^
+    SyntaxError: invalid syntax
+
+
 
 
 ```python
@@ -229,10 +222,20 @@ print(a)
 print('\n')  
 
 print('After rounding:') 
-print( np.around(a) 
-print( np.around(a, decimals = 1) 
-print( np.around(a, decimals = -1)
+print( np.around(a) )
+print( np.around(a, decimals = 1) )
+print( np.around(a, decimals = -1) )
 ```
+
+    Original array:
+    [  1.      5.55  123.      0.567  25.532]
+    
+    
+    After rounding:
+    [  1.   6. 123.   1.  26.]
+    [  1.    5.6 123.    0.6  25.5]
+    [  0.  10. 120.   0.  30.]
+
 
 ### ``numpy.floor()``
 This function returns the largest integer not greater than the input parameter. 
