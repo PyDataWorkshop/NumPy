@@ -38,14 +38,18 @@ The following examples show how you can use this function.
 
 
 ```python
-Example 1
- Live Demo
+#### Example 1
+```
+
+
+```python
 import numpy as np 
 x = np.arange(5) 
 print(x)
-Its output would be as follows −
-[0  1  2  3  4]
 ```
+
+    [0 1 2 3 4]
+
 
 #### Example 2
 
@@ -79,6 +83,11 @@ numpy.linspace
 This function is similar to arange() function. In this function, instead of step size, the number of evenly spaced values between the interval is specified. The usage of this function is as follows −
 numpy.linspace(start, stop, num, endpoint, retstep, dtype)
 The constructor takes the following parameters.
+```
+
+
+```python
+
 Sr.No.
 Parameter & Description
 1
@@ -101,11 +110,9 @@ dtype
 Data type of output ndarray
 ```
 
-
-```python
 The following examples demonstrate the use linspace function.
-Example 1
-```
+
+#### Example 1
 
 
 ```python
@@ -129,44 +136,37 @@ print(x)
 
 ```
 
+#### Example 3
+
 
 ```python
-
-
-Example 3
- Live Demo
 # find retstep value 
 import numpy as np 
 
 x = np.linspace(1,2,5, retstep = True) 
 print(x) 
 # retstep here is 0.25
-Now, the output would be −
-(array([ 1.  ,  1.25,  1.5 ,  1.75,  2.  ]), 0.25)
+
 
 ```
 
+    (array([1.  , 1.25, 1.5 , 1.75, 2.  ]), 0.25)
 
-```python
+
 numpy.logspace
 This function returns an ndarray object that contains the numbers that are evenly spaced on a log scale. Start and stop endpoints of the scale are indices of the base, usually 10.
 numpy.logspace(start, stop, num, endpoint, base, dtype)
 Following parameters determine the output of logspace function.
-```
 
-
-```python
 Sr.No.
-Parameter & Description
-1
-start
-The starting point of the sequence is basestart
-2
-stop
-The final value of sequence is basestop
-3
-num
-The number of values between the range. Default is 50
+
+|   |Parameter | Description|
+|---|------|-------|
+| 1 | start|  The starting point of the sequence is basestart |
+| 2 | stop | The final value of sequence is basestop|
+| 3 | num  | The number of values between the range. |
+|   | .... |(Default is 50)|
+
 4
 endpoint
 If true, stop is the last value in the range
@@ -177,7 +177,6 @@ Base of log space, default is 10
 dtype
 Data type of output array. If not given, it depends upon other input arguments
 The following examples will help you understand the logspace function.
-```
 
 #### Example 1
 
