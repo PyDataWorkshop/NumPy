@@ -1,9 +1,13 @@
 
 NumPy - Array Manipulation
-
+================================================
 
 
 Several routines are available in NumPy package for manipulation of elements in ndarray object. They can be classified into the following types −
+
+
+
+```python
 Changing Shape
 Sr.No.
 Shape & Description
@@ -19,6 +23,12 @@ Returns a copy of the array collapsed into one dimension
 4
 ravel 
 Returns a contiguous flattened array
+```
+
+
+```python
+
+
 Transpose Operations
 Sr.No.
 Operation & Description
@@ -34,6 +44,11 @@ Rolls the specified axis backwards
 4
 swapaxes 
 Interchanges the two axes of an array
+```
+
+
+```python
+
 Changing Dimensions
 Sr.No.
 Dimension & Description
@@ -49,6 +64,12 @@ Expands the shape of an array
 4
 squeeze 
 Removes single-dimensional entries from the shape of an array
+```
+
+
+```python
+
+
 Joining Arrays
 Sr.No.
 Array & Description
@@ -64,6 +85,11 @@ Stacks arrays in sequence horizontally (column wise)
 4
 vstack 
 Stacks arrays in sequence vertically (row wise)
+
+```
+
+
+```python
 Splitting Arrays
 Sr.No.
 Array & Description
@@ -76,6 +102,12 @@ Splits an array into multiple sub-arrays horizontally (column-wise)
 3
 vsplit 
 Splits an array into multiple sub-arrays vertically (row-wise)
+
+
+```
+
+
+```python
 Adding / Removing Elements
 Sr.No.
 Element & Description
@@ -96,3 +128,4 @@ unique
 Finds the unique elements of an array
 
 
+```
