@@ -160,10 +160,14 @@ print( np.degrees(inv) )
 
 
 ```python
-Functions for Rounding
-numpy.around()
-This is a function that returns the value rounded to the desired precision. The function takes the following parameters.
+## Functions for Rounding
+
+### numpy.around()
+This is a function that returns the value rounded to the desired precision. 
+The function takes the following parameters.
+<per><code>
 numpy.around(a,decimals)
+</code></pre>
 ```
 
 
@@ -197,19 +201,8 @@ decimals
 
 
 
-
-```python
 The number of decimals to round to. Default is 0. If negative, the integer is rounded to position to the left of the decimal point
 Example
-```
-
-
-      File "<ipython-input-11-4d5cfad55669>", line 1
-        The number of decimals to round to. Default is 0. If negative, the integer is rounded to position to the left of the decimal point
-                 ^
-    SyntaxError: invalid syntax
-
-
 
 
 ```python

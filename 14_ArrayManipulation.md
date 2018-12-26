@@ -16,66 +16,47 @@ Several routines are available in NumPy package for manipulation of elements in 
 |3 | flatten |  Returns a copy of the array collapsed into one dimension|
 |4 |  ravel |  Returns a contiguous flattened array|
 
-
-```python
-
-
-Transpose Operations
-Sr.No.
-Operation & Description
-1
-transpose 
-Permutes the dimensions of an array
-2
-ndarray.T 
-Same as self.transpose()
-3
-rollaxis 
-Rolls the specified axis backwards
-4
-swapaxes 
-Interchanges the two axes of an array
-```
+### Transpose Operations
 
 
-```python
+| | Operation | Description|
+|--|--|--|
+|1|transpose | Permutes the dimensions of an array |
+|2|ndarray.T | Same as self.transpose() |
+|3|rollaxis | Rolls the specified axis backwards |
+|4|swapaxes | Interchanges the two axes of an array| 
 
-Changing Dimensions
-Sr.No.
-Dimension & Description
-1 broadcast Produces an object that mimics broadcasting
-2 broadcast_to Broadcasts an array to a new shape
-3 expand_dims Expands the shape of an array
-4 squeeze Removes single-dimensional entries from the shape of an array
-```
+### Changing Dimensions
 
+| | Array | Description|
+|--|--|--|
+| 1 | broadcast | Produces an object that mimics broadcasting |
+| 2 | broadcast_to | Broadcasts an array to a new shape |
+| 3 | expand_dims | Expands the shape of an array |
+| 4 | squeeze | Removes single-dimensional entries from the shape of an array |
 
-```python
-
-
-Joining Arrays
-Sr.No.
-Array & Description
-
-1 concatenate  Joins a sequence of arrays along an existing axis
-2 stack  Joins a sequence of arrays along a new axis
-3 hstack  Stacks arrays in sequence horizontally (column wise)
-4 vstack  Stacks arrays in sequence vertically (row wise)
-
-```
+###  Joining Arrays
 
 
-```python
-Splitting Arrays
-Sr.No.
-Array & Description
 
-1 split   Splits an array into multiple sub-arrays
-2 hsplit  Splits an array into multiple sub-arrays horizontally (column-wise)
-3 vsplit  Splits an array into multiple sub-arrays vertically (row-wise)
+| | Array | Description|
+|--|--|--|
+| 1 | concatenate | Joins a sequence of arrays along an existing axis |
+| 2 | stack  | Joins a sequence of arrays along a new axis |
+| 3 | hstack | Stacks arrays in sequence horizontally (column wise) |
+| 4 | vstack | Stacks arrays in sequence vertically (row wise) |
 
 
-```
+### Splitting Arrays
+
+
+| | Array | Description|
+|--|--|--|
+|1 |split   |Splits an array into multiple sub-arrays|
+|2 |hsplit  |Splits an array into multiple sub-arrays horizontally (column-wise)|
+|3 |vsplit  |Splits an array into multiple sub-arrays vertically (row-wise)|
+
+
 
 
 ```python
@@ -91,3 +72,11 @@ Element & Description
 
 
 ```
+
+
+      File "<ipython-input-1-49fbd3ea9e89>", line 1
+        Adding / Removing Elements
+                                 ^
+    SyntaxError: invalid syntax
+
+
